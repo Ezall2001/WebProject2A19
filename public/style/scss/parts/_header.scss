@@ -1,0 +1,15 @@
+/** @format */
+
+@use '../utils/config' as *;
+@use './nav';
+@use './accountNav';
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: fit-content;
+	padding: 2rem 4rem;
+	background-color: $dark-blue;
+}

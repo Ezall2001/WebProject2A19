@@ -1,0 +1,26 @@
+/** @format */
+@use './config' as *;
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	// font-family: $font-primary;
+}
+
+ul {
+	list-style: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+a {
+	color: inherit;
+}

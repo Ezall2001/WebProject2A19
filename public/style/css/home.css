@@ -1,0 +1,93 @@
+/** @format */
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/../assets/fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+/** @format */
+nav .page-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+nav .page-nav > li {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+nav .page-nav > li > a {
+  position: relative;
+  color: #e6505d;
+}
+nav .page-nav > li > a span {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  overflow: hidden;
+}
+nav .page-nav > li.section-explore {
+  position: relative;
+}
+nav .page-nav > li.section-explore .drop-nav {
+  background-color: #baaaf2;
+  position: absolute;
+  padding: 1rem 0;
+  display: none;
+}
+nav .page-nav > li.section-explore .drop-nav li {
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+  color: #fff;
+}
+nav .page-nav > li.section-explore .drop-nav li:hover a {
+  color: #e6505d;
+}
+nav .page-nav > li.section-explore:hover .drop-nav {
+  display: block;
+}
+
+/** @format */
+.account-nav .logged-out button {
+  padding: 1rem 0;
+  line-height: 0;
+  width: 7.1rem;
+  border: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #e6505d;
+  outline: 2px solid #fff;
+}
+.account-nav .logged-out button:last-of-type {
+  margin-left: 2rem;
+}
+.account-nav .logged-out button.active {
+  background-color: #e6505d;
+  color: #fff;
+  outline: 2px solid #e6505d;
+}
+.account-nav .logged-out button.login:hover {
+  background-color: #fff;
+  color: #e6505d;
+  outline: 2px solid #fff;
+}
+
+/** @format */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 4rem;
+  background-color: #221f2b;
+}
+
+/** @format */

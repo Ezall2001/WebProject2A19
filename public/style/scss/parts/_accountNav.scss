@@ -1,0 +1,39 @@
+/** @format */
+
+@use '../utils/config' as *;
+
+.account-nav {
+	.logged-out {
+		button {
+			padding: 1rem 0;
+			line-height: 0;
+			width: 7.1rem;
+			border: none;
+			border-radius: 2.5rem;
+			cursor: pointer;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			background-color: transparent;
+			color: $red;
+			outline: 2px solid $white;
+
+			&:last-of-type {
+				margin-left: 2rem;
+			}
+
+			&.active {
+				background-color: $red;
+				color: $white;
+				outline: 2px solid $red;
+			}
+
+			&.login {
+				&:hover {
+					background-color: $white;
+					color: $red;
+					outline: 2px solid $white;
+				}
+			}
+		}
+	}
+}

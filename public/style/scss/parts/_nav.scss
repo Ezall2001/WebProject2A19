@@ -1,0 +1,61 @@
+/** @format */
+@use '../utils/config' as *;
+
+$li-padding: 0.5rem 1rem;
+// TODO: add hover transition
+nav .page-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	& > li {
+		padding: $li-padding;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		& > a {
+			position: relative;
+			color: $red;
+
+			span {
+				color: $white;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 3;
+				overflow: hidden;
+			}
+		}
+
+		&.section-explore {
+			// TODO: redesign this
+			// TODO: add animation
+			position: relative;
+
+			.drop-nav {
+				background-color: $light-purple;
+				position: absolute;
+				padding: 1rem 0;
+				display: none;
+
+				li {
+					font-size: 1rem;
+					text-transform: capitalize;
+					margin-top: 0.5rem;
+					color: $white;
+
+					&:hover a {
+						color: $red;
+					}
+				}
+			}
+
+			&:hover .drop-nav {
+				display: block;
+			}
+		}
+	}
+}

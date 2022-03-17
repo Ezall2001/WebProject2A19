@@ -1,0 +1,30 @@
+/** @format */
+@font-face {
+  font-family: RobotoSlab;
+  src: url("/../assets/fonts/RobotoSlab-VariableFont_wght.ttf");
+}
+/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+}
+
+ul {
+  list-style: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/** @format */
