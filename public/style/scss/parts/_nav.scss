@@ -17,6 +17,7 @@ nav .page-nav {
 		& > a {
 			position: relative;
 			color: $red;
+			border-bottom: 1px solid $red;
 
 			span {
 				color: $white;
@@ -27,6 +28,8 @@ nav .page-nav {
 				right: 0;
 				z-index: 3;
 				overflow: hidden;
+				padding-bottom: 1.2rem;
+				background-color: $dark-blue;
 			}
 		}
 
