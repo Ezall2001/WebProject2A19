@@ -1,7 +1,7 @@
 /** @format */
 @font-face {
   font-family: RobotoSlab;
-  src: url("/../assets/fonts/RobotoSlab-VariableFont_wght.ttf");
+  src: url("../../assets/fonts/robotoSlab.ttf");
 }
 /** @format */
 nav .page-nav {
@@ -32,7 +32,7 @@ nav .page-nav .nav-item > li a span {
   right: 0;
   z-index: 3;
   overflow: hidden;
-  padding-bottom: 1.2rem;
+  padding-bottom: 1.4rem;
   background-color: #221f2b;
 }
 nav .page-nav .drop-nav-wrapper {
