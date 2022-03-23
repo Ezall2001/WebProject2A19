@@ -1,19 +1,22 @@
 /** @format */
 
 import AnimationPlayer from './animationPlayer.js'
-
+import DropNavAnimationPlayer from './dropNav.js'
 export default class Nav {
 	constructor() {
 		this.nextActive = 0
 		this.currActive = 0
 
 		this.pageNav = $('.page-nav')
-		this.pageNavs = this.pageNav.children('li')
+		this.pageNavs = this.pageNav.children('.nav-item')
 		this.mouseEnterEvent = this.mouseEnterEvent.bind(this)
 		this.mouseLeaveEvent = this.mouseLeaveEvent.bind(this)
 		this.pageNavs.on('mouseenter', this.mouseEnterEvent)
 		this.pageNav.on('mouseleave', this.mouseLeaveEvent)
 
+		this.dropNavAnimationPlayer = new DropNavAnimationPlayer(
+			this.pageNavs.eq(0).children('li'),
+		)
 		this.animationPlayer = new AnimationPlayer(
 			this.pageNavs,
 			this.setActiveData.bind(this),
@@ -21,7 +24,8 @@ export default class Nav {
 	}
 
 	mouseEnterEvent(e) {
-		const navIndex = this.pageNavs.index(e.target)
+		let navIndex = this.pageNavs.index(e.target)
+		if (navIndex < 0) navIndex = 0
 		let {direction, dist} = this.findLowestDist(navIndex)
 
 		if (dist === 0) return
