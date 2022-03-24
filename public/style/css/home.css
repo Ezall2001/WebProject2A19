@@ -183,6 +183,7 @@ nav .page-nav .drop-nav-wrapper .drop-nav li.nav-music {
 }
 /** @format */
 header {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,6 +191,203 @@ header {
   height: fit-content;
   padding: 2rem 4rem;
   background-color: #221f2b;
+  z-index: 2;
+}
+
+/** @format */
+.landing .video-player-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.landing .video-player-wrapper .video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/imgs/firstMoviepic.jpg");
+}
+.landing .video-player-wrapper .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(230, 185, 80, 0.53) 0%, rgba(34, 31, 43, 0) 30%, rgba(34, 31, 43, 0) 35%, rgba(34, 31, 43, 0.78) 80%, #221f2b 100%);
+}
+
+/** @format */
+.landing .description {
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  width: 60%;
+  background-color: rgba(34, 31, 43, 0.3);
+  backdrop-filter: blur(7px);
+  color: #f2dcaa;
+  padding: 2rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+}
+.landing .description-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.landing .description-controls {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing .description-controls .timeline {
+  position: relative;
+}
+.landing .description-controls .timeline .layer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.landing .description-controls .timeline .layer.base .line {
+  background-color: #707070;
+}
+.landing .description-controls .timeline .layer.base .circle {
+  color: #707070;
+  border-color: #707070;
+}
+.landing .description-controls .timeline .layer.hover {
+  width: 0%;
+  overflow: hidden;
+}
+.landing .description-controls .timeline .layer.hover .line {
+  background-color: #bfbfbf;
+}
+.landing .description-controls .timeline .layer.hover .circle {
+  color: #bfbfbf;
+  border-color: #bfbfbf;
+}
+.landing .description-controls .timeline .layer.playing {
+  width: 0%;
+  overflow: hidden;
+}
+.landing .description-controls .timeline .layer.playing .line {
+  background-color: #fff;
+}
+.landing .description-controls .timeline .layer.playing .circle {
+  color: #fff;
+  border-color: #fff;
+}
+.landing .description-controls .timeline .layer .line {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin: 0 0.3rem;
+}
+.landing .description-controls .timeline .layer .circle {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+.landing .description-controls .timeline .layer .circle.active::before {
+  content: "";
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.landing .description-controls .timeline .layer .circle span {
+  font-size: 0.9rem;
+  position: absolute;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.landing .description-controls .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing .description-controls .controls i {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: rgba(191, 191, 191, 0.2);
+  transition: color 0.1s ease-in-out;
+}
+.landing .description-controls .controls i:hover {
+  color: #fff;
+}
+.landing .description-controls .controls-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing .description-controls .controls-video > i {
+  margin: 0 1.5rem;
+}
+.landing .description-controls .controls-video .pause-play {
+  position: relative;
+}
+.landing .description-controls .controls-video .pause-play i {
+  font-size: 1.5rem;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.landing .description-controls .controls-video .pause-play i.fa-circle-play {
+  display: none;
+}
+.landing .description-controls .controls-volume {
+  position: relative;
+  margin-left: 3rem;
+}
+.landing .description-controls .controls-volume i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.landing .description-controls .controls-volume i.fa-volume-high {
+  display: none;
+}
+.landing .description-hide {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  background-color: #fff;
+  color: #e6505d;
+  padding: 0.3rem 0.25rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  transition: padding-top 0.2s ease-in;
+}
+.landing .description-hide i {
+  font-size: 1.3rem;
+}
+.landing .description-hide:hover {
+  padding-top: 1rem;
+}
+
+/** @format */
+.landing {
+  width: 100%;
+  height: 100vh;
+  padding-top: 5rem;
 }
 
 /** @format */

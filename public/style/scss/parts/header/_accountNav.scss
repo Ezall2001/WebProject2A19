@@ -1,0 +1,83 @@
+/** @format */
+
+@use '../../utils/config' as *;
+
+$radius: 2.5rem;
+$margin: 2rem;
+$width: 7.1rem;
+
+.account-nav {
+	position: relative;
+	.logged-out {
+		button {
+			padding: 1rem 0;
+			line-height: 0;
+			width: $width;
+			border: none;
+			border-radius: $radius;
+			cursor: pointer;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			background-color: transparent;
+			color: $white;
+			outline: 2px solid $red;
+			position: relative;
+			z-index: 3;
+
+			&.login {
+				margin-left: $margin;
+			}
+		}
+
+		.mask {
+			position: absolute;
+			top: 0;
+			left: calc(100% - $width);
+			background-color: $red;
+			width: $width;
+			height: 100%;
+			border-radius: $radius;
+			outline: 2px solid $red;
+			z-index: 1;
+			transition: left 0.3s ease-out;
+
+			&.right {
+				animation: toRight 0.6s ease-out forwards;
+			}
+
+			&.left {
+				animation: toLeft 0.3s ease-out forwards;
+			}
+		}
+	}
+}
+
+@keyframes toRight {
+	0% {
+		left: 0;
+	}
+	40% {
+		left: calc(104% - $width);
+	}
+	60% {
+		left: calc(96.5% - $width);
+	}
+	80% {
+		left: calc(101.5% - $width);
+	}
+	95% {
+		left: calc(98% - $width);
+	}
+	100% {
+		left: calc(100% - $width);
+	}
+}
+
+@keyframes toLeft {
+	0% {
+		left: calc(100% - $width);
+	}
+	100% {
+		left: 0;
+	}
+}

@@ -1,31 +1,32 @@
 /** @format */
 @font-face {
-	font-family: RobotoSlab;
-	src: url('../../assets/fonts/robotoSlab.ttf');
+  font-family: RobotoSlab;
+  src: url("../../assets/fonts/robotoSlab.ttf");
 }
 /** @format */
 * {
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 body {
-	width: 100vw;
-	font-family: 'RobotoSlab';
+  width: 100vw;
+  font-family: "RobotoSlab";
+  overflow-x: hidden;
 }
 
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 a:visited {
-	color: inherit;
+  color: inherit;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 /** @format */
