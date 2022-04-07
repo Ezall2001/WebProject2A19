@@ -6,8 +6,15 @@ $radius: 2.5rem;
 $margin: 2rem;
 $width: 7.1rem;
 
+.account-nav-wrapper {
+	width: 33.33%;
+	display: flex;
+	justify-content: flex-end;
+}
+
 .account-nav {
 	position: relative;
+
 	.logged-out {
 		button {
 			padding: 1rem 0;

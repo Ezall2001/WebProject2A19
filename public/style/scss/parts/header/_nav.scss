@@ -4,7 +4,16 @@
 $li-padding: 0.5rem 1rem;
 $drop-nav-radius: 30px;
 
+.nav-wrapper {
+	width: 33.33%;
+	nav {
+		margin: auto;
+	}
+}
+
 nav .page-nav {
+	margin: auto;
+	width: fit-content;
 	display: flex;
 	justify-content: center;
 	align-items: center;
