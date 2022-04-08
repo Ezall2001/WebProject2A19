@@ -1,0 +1,151 @@
+
+
+                            /* SEARCH BAR  */
+
+.boxContainer
+{
+   display:inline-flex;
+    margin: 40px;    
+    width: 500px;
+    height: 42px;
+    border: 2px solid #C7AF14;
+    padding: 0px 10px;
+    border-radius: 50px; 
+}
+
+.elementContainer
+{
+    width: 100%;
+    height: 100%;
+}
+
+.search
+{
+    border: none;
+    height: 100%;
+    padding: 0px 5px;
+    border-radius: 50px; /*fine edges */
+    font-size: 18px;
+    color: #000000;
+    outline: none;
+}
+
+
+                            /* button  */
+
+.button
+{
+    display: inline-flex;
+    width: 500px;
+    height: 42px;
+    text-align: left;
+    background-color:indianred; 
+    position: relative;
+    margin-left: 500px;
+    padding-right: 300px;
+    
+}
+
+button:hover
+{
+    background:crimson;
+}
+.buttonText
+{
+    display: inline-flex;
+    align-items: center;
+    padding: O 24px;
+    color: white;
+}
+                            /* Text Layout  */
+
+ .left
+ {
+    justify-content:center;
+    text-align: left;   
+    padding: 70px;
+    color:black;
+
+ }                           
+
+                            /*box*/
+
+.box1
+{   
+    width: 1000px;
+    height: 170px;
+    background-color: #F1F1F1; 
+    margin:100px;
+}
+
+.boxLarge
+{   
+    width: 1000px;
+    height: 400px;
+    background-color: #F1F1F1; 
+    margin:100px;
+}
+
+.username
+{
+    text-align: left;
+    padding : 20px;  
+    padding-left:50px; 
+    padding-bottom: 5px;
+    color:black;
+    margin: 0px;
+}
+
+.lastPost
+{
+    text-shadow: 0 0 1.5px gray; 
+    color:rgb(185, 184, 184);
+    text-align: left;
+    padding-left: 50px;
+    margin: 0px;  
+}
+
+.comment
+{
+    text-align: left;
+    padding : 20px;  
+    padding-left:50px; 
+    padding-bottom: 15px;
+    color:black;
+    margin: 0px;
+}
+
+.like
+{   
+
+   padding-left: 20px; 
+   padding-right: 5px;
+   word-spacing: 10px; 
+   color: red;
+   
+}
+
+.parentDiv
+{
+    display: flex;  /*on the same line */ 
+}
+
+.childDiv1
+{
+    padding-left: 700px;
+    display: flex;
+}
+
+.childDiv2
+{
+    padding-left: 40px;
+}
+
+.vl {
+
+    border-left: 1px solid grey; 
+    height: 144px;
+    margin-top: 40px;
+   margin-left: 60px;
+    
+  }

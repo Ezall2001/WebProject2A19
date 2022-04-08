@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+                                /* HEADER */    
+
+.header
+{
+
+    display :flex; 
+    flex-direction: column;
+    align-items: center;
+    background: url('pics/pexels-lucas-pezeta-2398354.jpg');
+    background-size:cover;
+    color: white;
+    padding: 200px;
+    font-family:'Roboto',sans-serif ;
+    font-size: 100px;
+   
+}
+
+                                /* SEARCH BAR */                
+.boxContainer
+{
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    width: 500px;
+    height: 42px;
+    border: 2px solid #C7AF14;
+    padding: 0px 10px;
+    border-radius: 50px; 
+}
+
+.elementContainer
+{
+    width: 100%;
+    height: 100%;
+    vertical-align:middle;
+}
+
+.search
+{
+    border: none;
+    height: 100%;
+    padding: 0px 5px;
+    border-radius: 50px; /*fine edges */
+    font-size: 18px;
+    color: #000000;
+    outline: none;
+}
+
+
+
+                                /* TOPIC BOXES */ 
+
+.ContainerBox
+{
+    
+    width: 400px;
+    padding: 30px;
+    height: 240px;
+    margin: 40px;
+    display: flex;
+    font-family:'Roboto',sans-serif ;
+    background:white; 
+    color: rgb(0, 0, 0); 
+    box-shadow: -20px 20px 50px gray;
+    
+    border-width: 1px;
+    border-style:solid;
+    border-color: gray;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.ContainerBox.box1
+{
+    float:left;
+    
+}
+
+
+.ContainerBox.box2
+{
+    float:right;
+}
+
+.ContainerBox.box3
+{
+    float:left;
+}
+.ContainerBox.box4
+{
+    float:right;
+}  
+
+                               /* BOXES CONTENT (text) */
+.boxTitle
+
+{   
+    justify-content:left;
+    flex: 0 0 30%;
+    color:black;
+}
+
+.center
+{
+    justify-content:center;
+    text-align: center;   
+    padding: 2px;
+    color:black;
+}
+
+.left
+{
+    justify-content:center;
+    text-align: left;   
+    padding: 2px;
+    color:black;
+}
+
+.text
+{
+     text-shadow: 0 0 1.5px gray; 
+     color:transparent;
+     padding-bottom: 10px; 
+     justify-content:center;
+}
+
+.boxFooter
+{
+   padding: 0.5px; 
+   word-spacing: 90px; 
+   
+}
+
+                               /* ICONS */
+.heartIcon
+{
+    color: red;
+    display: inline-flex;
+    
+}
+
+.searchIcon
+{
+    color: #C7AF14;
+}
