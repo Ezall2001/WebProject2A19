@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+form h2 {
+    text-align: center;
+    color: #E6505D;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 0px;
+    text-transform: uppercase;
+}
+
+.signUp {
+    margin: 30px 0 20px 0;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 5px;
+    margin: 3px 0 2px 0;
+    /* display: inline-block; */
+    border: 1px solid rgb(168, 167, 167);
+    background: #fffefe;
+    border-radius: 10px;
+    align-items: center;
+    position: relative;
+
+
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
+    background-color: #ddd;
+    outline: none;
+
+}
+
+.loginBtn {
+    color: #e6b11f;
+    border: 1px solid #e6b11f;
+
+}
+
+.RegistreBtn {
+    border: 1px solid #E6505D;
+    color: #E6505D;
+}
+
+.RegistreBtn,
+.loginBtn {
+    background: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 26px;
+
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+
+    cursor: pointer;
+
+}
+
+.RegistreBtn:hover .loginBtn:hover {
+    opacity: 1;
+}
+
+form {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 20px 70px;
+}
+
+label {
+    text-align: center;
+    color: #b4b4b4;
+    font-weight: 50;
+    font-size: 12px;
+    font-family: 'Lucida Sans ', Arial, sans-serif;
+}
+
+h6 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #b4b4b4;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+h6 span {
+    background: #fff;
+    padding: 0 10px;
+    color: #b4b4b4;
+    font-size: 10px;
+}
+
+p {
+    color: #240847;
+    font-weight: 100;
+    font-size: 9px;
+}
+
+.signIn {
+    display: flex;
+
+
+}

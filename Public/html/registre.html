@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+
+    <link rel="stylesheet" href="../CSS/registre.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Registre</title>
+</head>
+
+<body>
+    <form action="">
+        <h2 id="Registre">Registre</h2>
+        <div class="signUp">
+
+            <label for="fulltName">Full Name: </label><br>
+            <input type="text" id="fullName" name="fullName" id="fullName" maxlength="20"><br>
+
+            <label for="userName">Username: </label><br>
+            <input type="text" id="userName" name="userName" id="userName" maxlength="20"><br>
+
+            <label for="email">Email: </label><br>
+            <input type="email" id="email" name="email" maxlength="20"><br>
+
+            <label for="password">Password: </label><br>
+            <input type="password" id="password" name="password"><br>
+
+            <label for="confirmPassword">Confirm Password: </label><br>
+            <input type="password" id="confirmPassword" name="confirmPassword"><br>
+
+
+
+
+            <input type="submit" value="Registre" class="RegistreBtn">
+        </div>
+
+        <div class="signIn">
+            <p> if you already have an account :</p>
+            <input type="submit" value="Login" class="loginBtn">
+        </div>
+
+        <h6> <span> Or</span> </h6>
+
+        <div id="my-signin2"></div>
+        <script>
+            function onSuccess(googleUser) {
+                console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            }
+
+            function onFailure(error) {
+                console.log(error);
+            }
+
+            function renderButton() {
+                gapi.signin2.render('my-signin2', {
+                    'scope': 'profile email',
+                    'width': 240,
+                    'height': 40,
+                    'longtitle': true,
+                    'theme': 'dark',
+                    'onsuccess': onSuccess,
+                    'onfailure': onFailure,
+
+
+                });
+            }
+        </script>
+
+        <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
+    </form>
+</body>
+
+</html>

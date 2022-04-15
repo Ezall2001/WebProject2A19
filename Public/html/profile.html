@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="side-nav">
+            <a onclick="tab(1)" class="tab">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </a>
+            <a onclick="tab(2)" class="tab">
+                <i class="fa fa-history" aria-hidden="true"></i>
+            </a>
+            <a onclick="tab(3)" class="tab">
+                <i class="fa fa-heart" aria-hidden="true"></i> </a>
+        </nav>
+        <form class="account-info" method="POST">
+            <h2>Full Name</h2>
+            <input type="text" name="userName" id="userName" value="<?php echo $user['Username']; ?>">
+            <h2>User Name</h2>
+            <input type="text" placeholder="username">
+            <h2>Email</h2>
+            <input type="text" placeholder="example@example.com">
+            <div class="submit-wrapper">
+                <button class="saveBtn" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
