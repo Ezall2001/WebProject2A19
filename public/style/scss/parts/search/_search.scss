@@ -1,0 +1,168 @@
+/** @format */
+
+@use '../../utils/config' as *;
+
+.music .search {
+	width: 60%;
+	margin: 5rem auto;
+
+	.search-by-name {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.logo-img {
+			display: block;
+			width: 30%;
+			height: 30%;
+
+			img {
+				width: 100%;
+				max-width: 8.5rem;
+				height: auto;
+			}
+			width: 8.5rem;
+			margin-right: 2.5rem;
+			background-color: $white;
+		}
+
+		.search-bar {
+			position: relative;
+			width: 70%;
+
+			input {
+				width: 100%;
+				padding: 0.8rem 2rem 0.8rem 4rem;
+				font-size: 1.3rem;
+				border: none;
+				outline: 4px solid $beige;
+				border-radius: 2rem;
+
+				&:focus {
+					outline: 4px solid $dark-honey;
+				}
+			}
+
+			i {
+				position: absolute;
+				top: 50%;
+				left: 1.5rem;
+				transform: translateY(-50%);
+				font-size: 1.3rem;
+				color: $beige;
+			}
+		}
+	}
+
+	.keywords h3,
+	.filters h3 {
+		margin-right: 1rem;
+		font-size: 1.2rem;
+		font-weight: bold;
+		text-transform: capitalize;
+		z-index: 2;
+	}
+
+	.keywords {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 5rem;
+
+		.keywords-wrapper {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			.keyword {
+				padding: 0.3rem 1.8rem;
+				color: $red;
+				border: 2px solid $red;
+				border-radius: 0.5rem;
+				background-color: $white;
+				margin: 0 1rem;
+				text-transform: capitalize;
+				transition: color 0.15s ease-in-out, background-color 0.2s ease-in-out;
+				cursor: pointer;
+
+				&.active,
+				&:hover {
+					background-color: $red;
+					color: $white;
+				}
+			}
+		}
+	}
+
+	.filters {
+		margin-top: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: flext-start;
+
+		.filters-toggle {
+			position: relative;
+
+			i {
+				position: relative;
+				z-index: 2;
+				font-size: 1.5rem;
+				padding: 0.35rem;
+				color: $red;
+				cursor: pointer;
+			}
+
+			.filters-wrapper {
+				z-index: 1;
+				position: absolute;
+				width: max-content;
+				padding: 1rem 2rem;
+				left: 50%;
+				top: 3rem;
+				transform: translate(-50%, -3rem) scale(0.8);
+				opacity: 0;
+				background-color: $dark-blue;
+				color: $white;
+				border-radius: 0.8rem;
+				pointer-events: none;
+				transition: transform 0.3s ease-out, opacity 0.2s ease-out;
+
+				&.active {
+					pointer-events: all;
+					transform: translate(-50%, 0) scale(1);
+					opacity: 1;
+				}
+
+				.input-wrapper {
+					margin: 1rem 0;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					label {
+						text-transform: capitalize;
+						margin-right: 2rem;
+						&::after {
+							content: ' :';
+						}
+					}
+					input,
+					select {
+						outline: 3px solid $red;
+						border-radius: 0.5rem;
+						background-color: $dark-blue;
+						font-size: 0.9rem;
+						color: $white;
+						border: none;
+						padding: 0.3rem 1rem;
+						text-align: center;
+						&:focus {
+							outline: 2px solid $light-purple;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -2,3 +2,10 @@
 
 @use './parts/header/header';
 @use './parts/logo/logo';
+@use './parts/musicLanding/musicLanding';
+@use './parts/search/search';
+@use './parts/result/result';
+
+.music {
+	padding-top: 20vh;
+}

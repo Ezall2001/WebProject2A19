@@ -446,7 +446,6 @@ header .logo-placeholder {
   height: 6.3rem;
   z-index: 3;
   transition: transform 0.3s ease-in-out;
-  background-color: red;
 }
 .logo .logo-container {
   position: relative;

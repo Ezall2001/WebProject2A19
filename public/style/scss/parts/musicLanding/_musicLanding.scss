@@ -1,0 +1,15 @@
+/** @format */
+
+@use '../../utils/config' as *;
+$padding: 2rem;
+
+.landing {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	padding-top: $padding;
+	background-color: $beige;
+	display: none;
+}
