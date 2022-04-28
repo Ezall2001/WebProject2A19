@@ -5,6 +5,8 @@
 @use './parts/musicLanding/musicLanding';
 @use './parts/search/search';
 @use './parts/result/result';
+@use './parts/musicInput/inputMusic.scss';
+@use './parts/musicianInput/inputMusician.scss';
 
 .music {
 	padding-top: 20vh;

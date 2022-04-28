@@ -61,7 +61,7 @@
 		font-size: 1.2rem;
 		font-weight: bold;
 		text-transform: capitalize;
-		z-index: 2;
+		z-index: 1;
 	}
 
 	.keywords {
@@ -163,6 +163,23 @@
 					}
 				}
 			}
+		}
+	}
+
+	.add-music,
+	.add-musician {
+		margin-top: 2rem;
+		margin-right: 1rem;
+		padding: 0.4rem 0.8rem;
+		font-size: 1.2rem;
+		background-color: $red;
+		color: $white;
+		border: none;
+		outline: 2px solid $red;
+		cursor: pointer;
+		&:hover {
+			color: $red;
+			background-color: $white;
 		}
 	}
 }

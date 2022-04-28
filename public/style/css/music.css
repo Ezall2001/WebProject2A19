@@ -348,7 +348,7 @@ header .logo-placeholder {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: capitalize;
-  z-index: 2;
+  z-index: 1;
 }
 .music .search .keywords {
   width: 100%;
@@ -442,6 +442,23 @@ header .logo-placeholder {
 .music .search .filters .filters-toggle .filters-wrapper .input-wrapper select:focus {
   outline: 2px solid #baaaf2;
 }
+.music .search .add-music,
+.music .search .add-musician {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  background-color: #e6505d;
+  color: #fff;
+  border: none;
+  outline: 2px solid #e6505d;
+  cursor: pointer;
+}
+.music .search .add-music:hover,
+.music .search .add-musician:hover {
+  color: #e6505d;
+  background-color: #fff;
+}
 
 /** @format */
 .result {
@@ -494,7 +511,6 @@ header .logo-placeholder {
   padding: 0 2rem;
   width: 20vw;
   height: 20vw;
-  background-image: url("../../assets/imgs/testRecord.jpg");
   background-size: cover;
   cursor: pointer;
 }
@@ -514,7 +530,12 @@ header .logo-placeholder {
 }
 .result .records-container .record .thumbnail .play i {
   color: #fff;
-  font-size: 5rem;
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  transition: color 0.2s ease-out;
+}
+.result .records-container .record .thumbnail .play i:hover {
+  color: #e6505d;
 }
 .result .records-container .record h4 {
   margin-top: 0.5rem;
@@ -552,8 +573,6 @@ header .logo-placeholder {
   z-index: 3;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(34, 31, 43, 0.5);
-  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -565,7 +584,19 @@ header .logo-placeholder {
   pointer-events: all;
   opacity: 1;
 }
+.result .playing .filter {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 31, 43, 0.5);
+  backdrop-filter: blur(5px);
+}
 .result .playing .playing-record-wrapper {
+  position: relative;
+  z-index: 2;
   height: 100vh;
   padding: 2rem 6rem;
   background-color: rgba(34, 31, 43, 0.9);
@@ -584,10 +615,14 @@ header .logo-placeholder {
   color: #fff;
 }
 .result .playing .playing-record-wrapper .interactions > div {
+  cursor: pointer;
   margin-right: 1.5rem;
 }
 .result .playing .playing-record-wrapper .interactions > div i {
   font-size: 1.5rem;
+}
+.result .playing .playing-record-wrapper .interactions > div i:hover {
+  color: #e6505d;
 }
 .result .playing .playing-record-wrapper .interactions .views {
   margin-top: 0.8rem;
@@ -630,6 +665,203 @@ header .logo-placeholder {
 }
 .result .playing .playing-record-wrapper .artists-wrapper .artist:hover .info {
   opacity: 1;
+}
+
+/** @format */
+.music-add-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+}
+.music-add-wrapper .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 31, 43, 0.8);
+}
+.music-add-wrapper .music-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 5rem;
+  background-color: #fff;
+  border-radius: 20px;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+.music-add-wrapper .music-input h2 {
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #e6505d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.music-add-wrapper .music-input h2 i {
+  font-size: 2.8rem;
+  margin-right: 1.5rem;
+}
+.music-add-wrapper .music-input .input-wrapper {
+  margin: auto;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.music-add-wrapper .music-input .input-wrapper label {
+  font-size: 1.2rem;
+  min-width: 20%;
+  margin-right: 1rem;
+}
+.music-add-wrapper .music-input .input-wrapper input,
+.music-add-wrapper .music-input .input-wrapper select {
+  width: 60%;
+  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  margin-right: 1rem;
+}
+.music-add-wrapper .music-input .input-wrapper > p {
+  margin-left: 1rem;
+  color: #e6505d;
+  width: 20%;
+}
+.music-add-wrapper .music-input .input-wrapper.musicians .multiple-inputs {
+  width: 60%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.music-add-wrapper .music-input .input-wrapper.musicians .multiple-inputs > input {
+  width: 100%;
+  margin: 0.7rem 0;
+}
+.music-add-wrapper .music-input .input-wrapper.musicians .multiple-inputs .add-input {
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background-color: #e6505d;
+  outline: 2px solid #e6505d;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+}
+.music-add-wrapper .music-input .input-wrapper.musicians .multiple-inputs .add-input:hover {
+  background-color: #fff;
+  color: #e6505d;
+}
+.music-add-wrapper .music-input input[type=submit] {
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  padding: 0.3rem 1.2rem;
+  background-color: #fff;
+  color: #e6505d;
+  outline: 2px solid #e6505d;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.music-add-wrapper .music-input input[type=submit]:hover {
+  background-color: #e6505d;
+  color: #fff;
+}
+
+/** @format */
+.musician-add-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+}
+.musician-add-wrapper .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 31, 43, 0.8);
+}
+.musician-add-wrapper .musician-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 5rem;
+  background-color: #fff;
+  border-radius: 20px;
+  width: max-content;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+.musician-add-wrapper .musician-input h2 {
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #e6505d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.musician-add-wrapper .musician-input h2 i {
+  font-size: 2.8rem;
+  margin-right: 1.5rem;
+}
+.musician-add-wrapper .musician-input form {
+  margin-top: 2rem;
+}
+.musician-add-wrapper .musician-input .input-wrapper {
+  margin: auto;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.musician-add-wrapper .musician-input .input-wrapper label {
+  font-size: 1.2rem;
+  min-width: 20%;
+  margin-right: 1rem;
+}
+.musician-add-wrapper .musician-input .input-wrapper input,
+.musician-add-wrapper .musician-input .input-wrapper select {
+  width: 60%;
+  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  margin-right: 1rem;
+  border: 1px solid black;
+}
+.musician-add-wrapper .musician-input .input-wrapper > p {
+  margin-left: 1rem;
+  color: #e6505d;
+  width: 20%;
+}
+.musician-add-wrapper .musician-input input[type=submit] {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  padding: 0.3rem 1.2rem;
+  background-color: #fff;
+  color: #e6505d;
+  outline: 2px solid #e6505d;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.musician-add-wrapper .musician-input input[type=submit]:hover {
+  background-color: #e6505d;
+  color: #fff;
 }
 
 /** @format */
