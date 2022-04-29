@@ -1,7 +1,7 @@
 <section class="landing">
 
   <div class="video-player-wrapper">
-    <video class="video-player" src="./assets/The EVOLUTION of FILM in 3 minutes.mp4" autoplay muted loop></video>
+    <video class="video-player" src="<?php echo URLROOT ?>/public/assets/The EVOLUTION of FILM in 3 minutes.mp4" autoplay muted loop></video>
     <div class="filter"></div>
   </div>
 

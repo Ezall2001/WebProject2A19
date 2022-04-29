@@ -18,7 +18,8 @@
   ?>
 
   <script src="https://kit.fontawesome.com/22e2495c8c.js" crossorigin="anonymous"></script>
-  <script src="./node_modules/jquery/dist/jquery.min.js" defer></script>
+  <script src="<?php echo URLROOT ?>/public/node_modules/jquery/dist/jquery.min.js"></script>
+
   <?php
   foreach ($data['js'] as $js) {
     echo '<script src="' . URLROOT . '/public/app/' . $js . '.js" type="module" defer></script>';

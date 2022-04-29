@@ -4,12 +4,12 @@ class Pages extends Controller
 {
   public function __construct()
   {
-    $this->userModel = $this->model('User');
   }
 
   public function index()
   {
     $this->view('pages/index', [
+      'pageName' => 'home',
       'styles' => ['global', 'home'],
       'js' => ['home']
     ]);
@@ -18,8 +18,10 @@ class Pages extends Controller
   public function music()
   {
     $this->view('pages/music', [
+      'admin' => true,
+      'pageName' => 'music',
       'styles' => ['global', 'music'],
-      'js' => []
+      'js' => ['music']
     ]);
   }
 }

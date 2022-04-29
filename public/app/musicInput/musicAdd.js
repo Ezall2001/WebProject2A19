@@ -4,7 +4,7 @@ export default class MusicAdd {
 	constructor() {
 		this.addMusicBtn = $('.add-music')
 		this.musicAddWrapper = $('.music-add-wrapper')
-		this.musicAddSubmit = this.musicAddWrapper.find('input[type="submit"]')
+		this.musicAddSubmit = this.musicAddWrapper.find('input[value="ADD"]')
 		this.musicAddFrom = this.musicAddWrapper.find('form').get(0)
 		this.wrapperFilter = this.musicAddWrapper.find('.filter')
 		this.musicianAddInput = this.musicAddWrapper.find('.add-input')

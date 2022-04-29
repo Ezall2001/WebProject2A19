@@ -7,7 +7,7 @@
         <div class="outer-mask"></div>
         <div class="inner-frame"></div>
         <div class="inner-mask"></div>
-        <img src="./assets/icons/sandClock.png">
+        <img src="<?php echo URLROOT ?>/public/assets/icons/sandClock.png">
         <div class="name"><span>decades chronicals</span></div>
         <div class="background"></div>
       </div>
@@ -23,15 +23,18 @@
           <ul class="page-nav">
             <!-- TODO: do a smooth scrolling -->
 
-            <div class="drop-nav-wrapper nav-item">
+            <?php
+
+            if ($data['pageName'] == 'home') {
+              echo '<div class="drop-nav-wrapper nav-item">
 
               <li>
                 <a href="#explore">explore<span class="mask">explore</span></a>
               </li>
 
               <ul class="drop-nav">
-                <li class="nav-film"><a href="./pages/films">films</a></li>
-                <li class="nav-music"><a href="./pages/music">music</a></li>
+                <li class="nav-film"><a href="' . URLROOT . '/pages/films">films</a></li>
+                <li class="nav-music"><a href="' . URLROOT . '/pages/music">music</a></li>
               </ul>
 
             </div>
@@ -42,7 +45,26 @@
 
             <li class="nav-item">
               <a href="#contact">contact<span class="mask">contact</span></a>
+            </li>';
+            } else {
+
+              echo '<li class="nav-item">
+              <a href="' . URLROOT . '/pages/index">Home<span class="mask">Home</span></a>
             </li>
+
+              <li class="nav-item">
+              <a href="' . URLROOT . '/pages/films">Films<span class="mask">Films</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a href="' . URLROOT . '/pages/music">Music<span class="mask">Music</span></a>
+            </li>';
+            }
+
+            ?>
+
+
+
 
           </ul>
         </nav>

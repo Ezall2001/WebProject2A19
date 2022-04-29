@@ -4,11 +4,15 @@ export default class Records {
 	constructor() {
 		this.recordsContainer = $('.records-container')
 		this.playing = $('.playing')
+		this.musicModifyWrapper = $('.music-modify-wrapper')
+		this.musicModifyFilter = this.musicModifyWrapper.find('.filter')
 
 		this.showPlaying = this.showPlaying.bind(this)
 		this.hidePlaying = this.hidePlaying.bind(this)
 		this.showModify = this.showModify.bind(this)
 		this.hideModify = this.hideModify.bind(this)
+
+		this.musicModifyFilter.on('click', this.hideModify)
 
 		this.init()
 	}
@@ -56,7 +60,21 @@ export default class Records {
 
 				const artistsWrapper = this.playing.find('.artists-wrapper')
 
-				///TODO: finish pulling the artists from the database and mounting them in the wrapper
+				fetch(`/WebProject2A19/musics/getMusicians?id=${id}`)
+					.then(res => res.json())
+					.then(data => {
+						data.forEach(item => {
+							fetch(
+								`https://www.googleapis.com/customsearch/v1?key=AIzaSyBHIsIBu4-oaWTLQldPNK2KkCpd6Yf6XI4&cx=b693f5eef4a30bfa8&q=${item.name}&searchType=image&fileType=jpg&imgSize=small&alt=json`,
+							)
+								.then(res => res.json())
+								.then(data => {
+									item.imgUrl = data.items[0].link
+									const artistHtml = this.consturctArtist(item)
+									artistsWrapper.append(artistHtml)
+								})
+						})
+					})
 
 				this.playingFilter = this.playing.find('.filter')
 				this.playingFilter.on('click', this.hidePlaying)
@@ -70,9 +88,42 @@ export default class Records {
 		this.playing.removeClass('active')
 	}
 
-	showModify() {}
+	showModify(e) {
+		const id = $(e.target).parent().parent().parent().attr('id')
 
-	hideModify() {}
+		this.musicModifyWrapper.css({
+			display: 'block',
+		})
+
+		fetch(`/WebProject2A19/musics/getById?id=${id}`)
+			.then(res => res.json())
+			.then(data => {
+				this.musicModifyWrapper.find('#name').val(data.name)
+				this.musicModifyWrapper.find('#year').val(data.year)
+				this.musicModifyWrapper
+					.find('#genre')
+					.find('option[value=' + data.genre + ']')
+					.prop('selected', true)
+				this.musicModifyWrapper.find('#url').val(data.url)
+			})
+
+		fetch(`/WebProject2A19/musics/getMusicians?id=${id}`)
+			.then(res => res.json())
+			.then(data => {
+				const mutilpleInputs = this.musicModifyWrapper.find('.multiple-inputs')
+				data.forEach(item => {
+					mutilpleInputs.prepend(
+						`<input name="musician[]" type="text" placeholder="Enter Name" value="${item.name}"></input>`,
+					)
+				})
+			})
+	}
+
+	hideModify() {
+		this.musicModifyWrapper.css({
+			display: 'none',
+		})
+	}
 
 	getId(url) {
 		const parsedUrl = new URL(url)
@@ -139,10 +190,10 @@ export default class Records {
 	}
 
 	consturctArtist(item) {
-		return `<div class="artist">
+		return `<div class="artist" style="background-image: url(${item.imgUrl})">
 					<div class="info">
-						<h4>${item.bandName}</h4>
-						<h3>${item.fullName}</h3>
+						<h4>${item.band}</h4>
+						<h3>${item.name}</h3>
 					</div>
 				</div>`
 	}
