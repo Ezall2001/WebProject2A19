@@ -1,4 +1,4 @@
-<div class="music-add-wrapper">
+<div class="music-add-wrapper" id="musicAdd">
   <div class="filter"></div>
   <div class="music-input">
     <h2><i class="fa-solid fa-circle-plus"></i> Add Music</h2>

@@ -580,6 +580,9 @@ header .logo-placeholder {
   opacity: 0;
   pointer-events: none;
 }
+.result .playing .save.active {
+  color: #e6505d;
+}
 .result .playing.active {
   pointer-events: all;
   opacity: 1;
@@ -599,7 +602,7 @@ header .logo-placeholder {
   z-index: 2;
   height: 100vh;
   padding: 2rem 6rem;
-  background-color: rgba(34, 31, 43, 0.9);
+  background-color: #221f2b;
 }
 .result .playing .playing-record-wrapper iframe {
   margin: auto;

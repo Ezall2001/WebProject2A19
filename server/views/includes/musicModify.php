@@ -4,6 +4,8 @@
     <h2><i class="fa-solid fa-screwdriver-wrench"></i> Modify Music</h2>
     <form action="<?php echo URLROOT ?>/musics/modify" method="POST">
 
+      <input type="text" name="id" class="music-id" style="display: none;">
+
       <div class="input-wrapper">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" required>

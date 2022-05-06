@@ -18,10 +18,20 @@ class Pages extends Controller
   public function music()
   {
     $this->view('pages/music', [
-      'admin' => true,
+      'admin' => false,
       'pageName' => 'music',
       'styles' => ['global', 'music'],
       'js' => ['music']
+    ]);
+  }
+
+  public function admin()
+  {
+    $this->view('pages/admin', [
+      'admin' => true,
+      'pageName' => 'admin',
+      'styles' => ['global', 'admin'],
+      'js' => ['admin']
     ]);
   }
 }

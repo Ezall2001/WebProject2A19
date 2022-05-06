@@ -30,6 +30,8 @@ class Musics extends Controller
   {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
       $response = $this->musicModel->getRandMusic(0, 0);
+
+      header("Content-Type: application/json");
       echo json_encode($response);
     }
   }
@@ -68,6 +70,72 @@ class Musics extends Controller
       }
 
       echo json_encode($response);
+    }
+  }
+
+  public function modify()
+  {
+    $response = (object) [];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $data = [
+        'id' => $_POST['id'],
+        'name' => $_POST['name'],
+        'year' => $_POST['year'],
+        'genre' => $_POST['genre'],
+        'url' => $_POST['url'],
+      ];
+
+      $response->nameErr = $this->validateName($data['name']);
+      $response->yearErr = $this->validateYear($data['year']);
+      $response->genreErr = $this->validateGenre($data['genre']);
+      $response->urlErr = $this->validateUrl($data['url']);
+
+      if (
+        $response->nameErr == '' &&
+        $response->yearErr == '' &&
+        $response->genreErr == '' &&
+        $response->urlErr == ''
+      ) {
+
+        if ($this->musicModel->modifyMusic($data))
+          $response->status = '200';
+      } else {
+        $response->status = '400';
+      }
+
+      echo json_encode($response);
+    }
+  }
+
+  public function delete()
+  {
+    $response = (object) [];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+      if ($this->musicModel->deleteMusic($_GET['id']))
+        $response->status = '200';
+    } else {
+      $response->status = '400';
+    }
+
+    echo json_encode($response);
+  }
+
+  public function getByKeyword()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      $res = $this->musicModel->getMusicByKeyword($_GET['keyword']);
+      echo json_encode($res);
+    }
+  }
+
+  public function getByName()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      $res = $this->musicModel->getMusicByName($_GET['name']);
+      echo json_encode($res);
     }
   }
 

@@ -136,6 +136,10 @@
 		opacity: 0;
 		pointer-events: none;
 
+		.save.active {
+			color: $red;
+		}
+
 		&.active {
 			pointer-events: all;
 			opacity: 1;
@@ -157,7 +161,7 @@
 			z-index: 2;
 			height: 100vh;
 			padding: 2rem 6rem;
-			background-color: rgba($dark-blue, 0.9);
+			background-color: rgba($dark-blue, 1);
 
 			iframe {
 				margin: auto;

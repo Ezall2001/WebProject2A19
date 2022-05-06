@@ -7,6 +7,7 @@ export default class MusicManager {
 		this.musicModify = this.musicManagerWarpper.find("input[value='Modify']")
 		this.musicDelete = this.musicManagerWarpper.find("input[value='Delete']")
 		this.musicianAddInput = this.musicManagerWarpper.find('.add-input')
+		this.musicId = this.musicManagerWarpper.find('.music-id')
 
 		this.submitModify = this.submitModify.bind(this)
 		this.submitDelete = this.submitDelete.bind(this)
@@ -32,7 +33,9 @@ export default class MusicManager {
 	submitModify(e) {
 		e.preventDefault()
 
-		const bodyFormData = new FormData(this.musicModifyFrom.get(0))
+		this.musicId.val(this.musicManagerWarpper.attr('id'))
+
+		const bodyFormData = new FormData(this.musicModifyForm.get(0))
 
 		fetch('/WebProject2A19/musics/modify', {
 			method: 'POST',
@@ -52,10 +55,12 @@ export default class MusicManager {
 	submitDelete(e) {
 		e.preventDefault()
 
-		fetch('/WebProject2A19/musics/modify', {
-			method: 'POST',
-			body: bodyFormData,
-		})
+		fetch(
+			`/WebProject2A19/musics/delete?id=${this.musicManagerWarpper.attr('id')}`,
+			{
+				method: 'GET',
+			},
+		)
 			.then(res => res.json())
 			.then(data => {
 				if (data.status === '200') {

@@ -9,6 +9,14 @@ class Musician
     $this->db = new Db();
   }
 
+  public function getMusicians()
+  {
+    $this->db->query('SELECT * FROM musicians');
+
+    $result = $this->db->resultSet();
+    return $result;
+  }
+
   public function getMusicianById($id)
   {
     $this->db->query('SELECT * FROM musicians WHERE id=:id');

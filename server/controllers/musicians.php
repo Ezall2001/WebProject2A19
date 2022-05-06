@@ -6,6 +6,16 @@ class Musicians extends Controller
     $this->musicianModel = $this->model('Musician');
   }
 
+  public function get()
+  {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      $response = $this->musicianModel->getMusicians();
+
+      header("Content-Type: application/json");
+      echo json_encode($response);
+    }
+  }
+
   public function add()
   {
     $response = (object) [];

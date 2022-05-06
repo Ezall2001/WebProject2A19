@@ -8,6 +8,15 @@ class Music
     $this->db = new Db();
   }
 
+  private function read($row)
+  {
+    $result = (object) [];
+    $result->id = $row["id"];
+    $result->name = $row["name"];
+    $result->url = $row["url"];
+    return $result;
+  }
+
   public function getMusicById($id)
   {
     $this->db->query("SELECT * FROM musics Where id = :id");
@@ -19,7 +28,9 @@ class Music
   public function getRandMusic($offset, $limit)
   {
     $this->db->query("SELECT * FROM musics ORDER BY RAND() LIMIT 10");
-    $result = $this->db->resultSet();
+    $result =  $this->db->resultSet();
+
+
     return $result;
   }
 
@@ -63,5 +74,47 @@ class Music
 
     $result = $this->db->resultSet();
     return $result;
+  }
+
+  public function modifyMusic($data)
+  {
+    $this->db->query('UPDATE musics SET name=:name, year=:year, genre=:genre, url=:url WHERE id=:id');
+
+    $this->db->bind(':id', $data['id']);
+    $this->db->bind(':name', $data['name']);
+    $this->db->bind(':year', $data['year']);
+    $this->db->bind(':genre', $data['genre']);
+    $this->db->bind(':url', $data['url']);
+
+    if ($this->db->execute())
+      return true;
+    return false;
+  }
+
+  public function deleteMusic($id)
+  {
+    $this->db->query('DELETE FROM musics WHERE id=:id');
+
+    $this->db->bind(':id', $id);
+
+    if ($this->db->execute())
+      return true;
+    return false;
+  }
+
+  public function getMusicByKeyword($keyword)
+  {
+    $this->db->query('SELECT * FROM musics WHERE genre=:keyword');
+    $this->db->bind(':keyword', $keyword);
+
+    $response = $this->db->resultSet();
+    return $response;
+  }
+
+  public function getMusicByName($name)
+  {
+    $this->db->query("SELECT * FROM musics WHERE name LIKE '" . $name . "%' ");
+    $response = $this->db->resultSet();
+    return $response;
   }
 }

@@ -6,13 +6,19 @@ export default class Records {
 		this.playing = $('.playing')
 		this.musicModifyWrapper = $('.music-modify-wrapper')
 		this.musicModifyFilter = this.musicModifyWrapper.find('.filter')
+		this.keywordsBtn = $('.keyword')
+		this.searchField = $('.search input')
 
 		this.showPlaying = this.showPlaying.bind(this)
 		this.hidePlaying = this.hidePlaying.bind(this)
 		this.showModify = this.showModify.bind(this)
 		this.hideModify = this.hideModify.bind(this)
+		this.getMusicByKeyword = this.getMusicByKeyword.bind(this)
+		this.getMusicByName = this.getMusicByName.bind(this)
 
 		this.musicModifyFilter.on('click', this.hideModify)
+		this.keywordsBtn.on('click', this.getMusicByKeyword)
+		this.searchField.on('keyup', this.getMusicByName)
 
 		this.init()
 	}
@@ -48,6 +54,33 @@ export default class Records {
 		this.filter.on('click', this.hideModify)
 	}
 
+	getMusicByName(e) {
+		fetch(`/WebProject2A19/musics/getByName?name=${e.target.value}`, {
+			method: 'GET',
+		})
+			.then(res => res.json())
+			.then(data => {
+				this.recordsContainer.html('')
+				data.forEach(this.mount)
+				this.update_records_events()
+			})
+			.catch(console.log)
+	}
+
+	getMusicByKeyword(e) {
+		const keyword = e.target.innerHTML
+		fetch(`/WebProject2A19/musics/getByKeyword?keyword=${keyword}`, {
+			method: 'GET',
+		})
+			.then(res => res.json())
+			.then(data => {
+				this.recordsContainer.html('')
+				data.forEach(this.mount)
+				this.update_records_events()
+			})
+			.catch(console.log)
+	}
+
 	showPlaying(e) {
 		this.playingRecord = $(e.target).parent().parent().parent()
 		const id = this.playingRecord.attr('id')
@@ -77,7 +110,24 @@ export default class Records {
 					})
 
 				this.playingFilter = this.playing.find('.filter')
+				this.likeBtn = this.playing.find('.like')
+				this.shareBtn = this.playing.find('.share')
+				localStorage.setItem('views', +localStorage.getItem('views') + 1)
+				this.numberViews = this.playing
+					.find('.number-views')
+					.html(localStorage.getItem('views'))
 				this.playingFilter.on('click', this.hidePlaying)
+
+				if (localStorage.getItem('liked') === 'liked') {
+					this.likeBtn.addClass('active')
+				} else {
+					this.likeBtn.on('click', () => {
+						localStorage.setItem('liked', 'liked')
+					})
+				}
+				this.shareBtn.on('click', () => {
+					console.log($(this).attr('data-url'))
+				})
 			})
 
 		this.playing.addClass('active')
@@ -85,15 +135,18 @@ export default class Records {
 
 	hidePlaying() {
 		this.playingFilter.off('click', this.hidePlaying)
+
 		this.playing.removeClass('active')
 	}
 
 	showModify(e) {
 		const id = $(e.target).parent().parent().parent().attr('id')
 
-		this.musicModifyWrapper.css({
-			display: 'block',
-		})
+		this.musicModifyWrapper
+			.css({
+				display: 'block',
+			})
+			.attr('id', id)
 
 		fetch(`/WebProject2A19/musics/getById?id=${id}`)
 			.then(res => res.json())
@@ -176,7 +229,7 @@ export default class Records {
 				<div class="save">
 					<i class="fa-regular fa-bookmark"></i>
 				</div>
-				<div class="share">
+				<div class="share" data-url="${item.url}">
 					<i class="fa-regular fa-share-from-square"></i>
 				</div>
 				<p class="views">

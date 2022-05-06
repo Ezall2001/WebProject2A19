@@ -11,14 +11,17 @@
   </title>
 
 
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
   <?php
   foreach ($data['styles'] as $style) {
     echo '<link rel="stylesheet" href="' . URLROOT . '/public/style/css/' . $style . '.css">';
   }
   ?>
 
-  <script src="https://kit.fontawesome.com/22e2495c8c.js" crossorigin="anonymous"></script>
   <script src="<?php echo URLROOT ?>/public/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+  <script src="https://kit.fontawesome.com/22e2495c8c.js" crossorigin="anonymous"></script>
 
   <?php
   foreach ($data['js'] as $js) {
