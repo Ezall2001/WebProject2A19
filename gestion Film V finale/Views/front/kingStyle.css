@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.king-s-work {
+	width: 8rem;
+	height: 8rem;
+	position: absolute;
+	top: 70%;
+	left: 490px;
+	transform: translate(-50%, -50%);
+}
+
+.king-s-work > * {
+	position: absolute;
+	top: 50%;
+	left: -100%;
+	transform: translate(-50%, -50%);
+}
+
+.outer-frame {
+	width: 80%;
+	height: 80%;
+	border: 6px solid #110636;
+	transform: translate(-50%, -50%) rotate(45deg);
+	z-index: 3;
+}
+
+.outer-mask {
+	width: 80%;
+	height: 25%;
+	background-color:transparent;
+	z-index: 4;
+}
+
+.inner-frame {
+	width: 90%;
+	height: 90%;
+	border: 4px solid #dd5c5f;
+	transform: translate(-50%, -50%) rotate(45deg);
+	z-index: 1;
+}
+
+.inner-mask {
+	width: 150%;
+	height: 20%;
+	background-color:transparent;
+	z-index: 2;
+}
+
+img {
+	z-index: 5;
+}
+
+.chronical,
+.decades {
+	z-index: 5;
+	font-size: 0.7rem;
+	font-family: 'Roboto Slab', serif;
+	text-transform: uppercase;
+}
+
+.chronical {
+	font-weight: bold ;
+	
+	left: -150%;
+	transform: translate(0, -55%);
+}
+
+.decades {
+	font-size: 0.7rem;
+	font-weight: light;
+	left: -95%;
+	transform: translate(0, -55%);
+}
+
