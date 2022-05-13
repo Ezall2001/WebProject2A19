@@ -1,0 +1,85 @@
+
+:root {
+    --main-color: rgb(231, 224, 194);
+    /* --text-color: #020307; */
+    --bg-color: #fff;
+    --rs--color:rgba(218, 43, 116, 0.864);
+}
+* {
+    /* font-family: 'Roboto', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing:none;
+    list-style: none;
+    text-decoration: bold;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+   color:rgb(204, 159, 159);
+    pointer-events: revert;
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: var(--text-color);
+
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+body {
+	
+	/* background:black; */
+	/* font-family: 'Varela Round', sans-serif; */
+	font-size: 16px;
+    
+	background-image:url("./../images/back.jpg");
+	background-position:top;
+	color: var(--main-color); 
+    /* color: beige; */
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.mb-3 {
+    color: var(--rs--color);
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    /* color: beige; */
+}
+
+.container .form-control {
+    background-color: transparent;
+    color: beige;
+    /* text-decoration: antiquewhite; */
+
+}
+form input {
+    color: azure;
+}
+
+.container .form-control:hover {
+    background-color: transparent;
+    color: beige;
+    /* text-decoration: antiquewhite;} */
+
+
+}
+.container {
+    background-color: transparent;
+    color: antiquewhite;
+}
+
+.btn {
+    background-color:var(--rs--color);
+    border: none;
+}
+
+.h1 {
+    color:var(--main-color);
+}
+
+.env{
+    background-color: transparent;
+    color: antiquewhite;
+}
