@@ -1,0 +1,16 @@
+{
+  "name": "WebProject2A19",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch ./public/style/scss:./public/style/css --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.49.9"
+  }
+}
